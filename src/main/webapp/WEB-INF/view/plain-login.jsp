@@ -5,6 +5,7 @@
 <html>
 	<head>
 		<title>User Login Page</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
 		<h3>My Custom Login Page</h3>
@@ -12,7 +13,7 @@
 		<form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="POST">
 			
 			<c:if test="${param.error != null}" >
-				<i style="color: red">Sorry! You entered invalid username/password</i>
+				<i class="failed">Sorry! You entered invalid username/password</i>
 			</c:if>
 			
 			<p>
