@@ -22,11 +22,11 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 			.withUser(users.username("john").password("test123").roles("EMPLOYEE"))
 			.withUser(users.username("wes").password("test123").roles("MANAGER"))
 			.withUser(users.username("blake").password("test123").roles("ADMIN"));
-		
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+	
 		http.authorizeRequests()
 				.anyRequest().authenticated()
 			.and()
