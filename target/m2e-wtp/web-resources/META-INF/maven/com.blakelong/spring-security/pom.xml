@@ -18,6 +18,13 @@
 
 	<dependencies>
 	
+		<!-- Spring Security Tag Library -->
+		<dependency>
+		  <groupId>org.springframework.security</groupId>
+		  <artifactId>spring-security-taglibs</artifactId>
+		  <version>${springsecurity.version}</version>
+		</dependency>
+	
 		<!-- Spring Security spring-security-web and spring-security-config -->
 		<dependency>
 		  <groupId>org.springframework.security</groupId>
