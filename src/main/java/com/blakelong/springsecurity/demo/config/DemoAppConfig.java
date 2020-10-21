@@ -13,7 +13,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @ComponentScan(basePackages="com.blakelong.springsecurity.demo")
 public class DemoAppConfig implements WebMvcConfigurer {
-	
 	@Bean 
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -24,6 +23,7 @@ public class DemoAppConfig implements WebMvcConfigurer {
 		return viewResolver;
 	}
 	
+	// config to serve content from css directory and need to implement WebMvcConfigurer
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/css/**").addResourceLocations("/css/");

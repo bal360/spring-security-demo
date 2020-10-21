@@ -28,13 +28,16 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 	
 		http.authorizeRequests()
+				//allowing for unauthenticated requests to css folder
 				.antMatchers("/css/**").permitAll()
 				.anyRequest().authenticated()
 			.and()
 			.formLogin()
 				.loginPage("/showMyLoginPage")
 				.loginProcessingUrl("/authenticateTheUser")
-				.permitAll();
+				.permitAll()
+			.and()
+			.logout().permitAll();
 	}
 	
 }
