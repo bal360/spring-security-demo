@@ -5,6 +5,6 @@
 	</head>
 	<body>
 		<h2>Company Home Page</h2>
-		<p>woohoo try again still stuff still stuff here again</p>
+		<p>All logged in, bud</p>
 	</body>
 </html>
