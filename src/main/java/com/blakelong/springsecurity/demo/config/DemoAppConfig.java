@@ -58,18 +58,18 @@ public class DemoAppConfig implements WebMvcConfigurer {
 		
 		// logging to make sure we have the correct information from properties file
 		logger.info("===>> jdbc.url: " + env.getProperty("jdbc.url"));
-		logger.info("===>> jdbc.url: " + env.getProperty("jdbc.user"));
+		logger.info("===>> jdbc.user: " + env.getProperty("jdbc.user"));
 		
 		// set database connection props
 		securityDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
-		securityDataSource.setJdbcUrl(env.getProperty("jdbc.user"));
-		securityDataSource.setJdbcUrl(env.getProperty("jdbc.password"));
+		securityDataSource.setUser(env.getProperty("jdbc.user"));
+		securityDataSource.setPassword(env.getProperty("jdbc.password"));
 		
 		// set connection pool props
 		securityDataSource.setInitialPoolSize(getIntPropety("connection.pool.initialPoolSize"));
-		securityDataSource.setInitialPoolSize(getIntPropety("connection.pool.minPoolSize"));
-		securityDataSource.setInitialPoolSize(getIntPropety("connection.pool.maxPoolSize"));
-		securityDataSource.setInitialPoolSize(getIntPropety("connection.pool.maxIdleTime"));
+		securityDataSource.setMinPoolSize(getIntPropety("connection.pool.minPoolSize"));
+		securityDataSource.setMaxPoolSize(getIntPropety("connection.pool.maxPoolSize"));
+		securityDataSource.setMaxIdleTime(getIntPropety("connection.pool.maxIdleTime"));
 		
 		return securityDataSource;	
 	}
