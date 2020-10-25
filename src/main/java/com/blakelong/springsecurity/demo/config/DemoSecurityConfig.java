@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 @EnableWebSecurity
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	// inject bean created in DempAppConfig
 	@Autowired
 	private DataSource securityDataSource;
 	
@@ -24,7 +25,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.jdbcAuthentication().dataSource(securityDataSource);
 	
 	
-		// add our users for in-memory authentication for demo purposes
+		// add our users for in-memory authentication for demo purposes - good pre-database check
 //		UserBuilder users = User.withDefaultPasswordEncoder();
 //		
 //		auth.inMemoryAuthentication()
